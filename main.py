@@ -1,16 +1,11 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from postClient.PostApplicationClient import PostApplicationClient
+from views.login_view_gui import show_login_screen
+from views.main_screen import show_main_screen
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def func(username, password):
+    client = PostApplicationClient(username.get(), password.get())
+    show_main_screen(client)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+show_login_screen(func)
